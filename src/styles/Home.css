@@ -1,0 +1,29 @@
+/* styles/Home.css */
+.manga-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .manga-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Center the text */
+  }
+  
+  .manga-card img {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+  }
+  
+  .manga-card h3 {
+    max-width: 400px; /* Limit the width of the title */
+    word-wrap: break-word; /* Allow long titles to wrap to a new line */
+    text-align: center; /* Center the title text */
+  }
+  

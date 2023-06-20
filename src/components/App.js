@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/App.css";
 import Home from "../pages/Home";
 import Signin from "../pages/Signin";
+import Favorites from "../pages/Favorites";
 import Navbar from "../components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<Signin />} />
+        <Route path="/favorites" element={<Favorites />} />
       </Routes>
     </Router>
   );

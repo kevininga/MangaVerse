@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
+import { AuthContext } from "../AuthContext"; // Import the AuthContext
 
 function Signin() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+
+  const { setAuthenticatedUser } = useContext(AuthContext); // Destructure setAuthenticatedUser from context
 
   const handleUsernameChange = (e) => {
     setName(e.target.value);
@@ -26,6 +29,7 @@ function Signin() {
       if (response.status === 200) {
         setName("");
         setPassword("");
+        setAuthenticatedUser(name); // Set the authenticated user once they've successfully signed in
         console.log(`Success signed in ${name}`);
       } else {
         console.log("Error:", response.status);

@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { AuthContext } from "../AuthContext"; // Import the AuthContext
 
 export default function Signup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [verifyPassword, setVerifyPassword] = useState("");
+
+  const { setAuthenticatedUser } = useContext(AuthContext); // Destructure setAuthenticatedUser from context
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -25,7 +28,8 @@ export default function Signup() {
         setEmail("");
         setPassword("");
         setVerifyPassword("");
-       console.log("Success")
+        setAuthenticatedUser(name); // Set the authenticated user once they've successfully signed up
+        console.log("Success");
       } else {
         console.log("Error:", response.status);
       }

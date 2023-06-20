@@ -1,7 +1,10 @@
-import React from "react";
+const Manga = ({ manga }) => {
+  return (
+    <div>
+      <img src={manga.picture_url} alt={manga.title} />
+      {/* Remove the title display */}
+    </div>
+  );
+};
 
-function MangaCard() {
-  return <div>MangaCard</div>;
-}
-
-export default MangaCard;
+export default Manga;

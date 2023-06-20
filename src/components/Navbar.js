@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css"; // include this if you have specific styles for the navbar
+import Search from "../components/Search";
 
 function Navbar({ children }) {
   return (
     <div>
       <nav>
         <ul className="navbar-list">
+          <li>
+            <Search />
+          </li>
           <li>
             <Link to="/">Home</Link>
           </li>

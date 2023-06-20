@@ -1,9 +1,11 @@
-// pages/Home.js
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { AuthContext } from "../auth/AuthContext"; // Import the AuthContext
 import "../styles/Home.css";
 
 const Home = () => {
+  const { authenticatedUser } = useContext(AuthContext); // Access the authenticatedUser from context
+
   const [mangas, setMangas] = useState([]);
 
   useEffect(() => {
@@ -16,6 +18,11 @@ const Home = () => {
 
     fetchMangas();
   }, []);
+
+  // Render the Home component only if the user is authenticated
+  if (!authenticatedUser) {
+    return null;
+  }
 
   return (
     <div className="manga-grid">

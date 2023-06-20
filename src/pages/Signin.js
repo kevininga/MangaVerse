@@ -1,12 +1,13 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
-import { AuthContext } from "../AuthContext"; // Import the AuthContext
+import { Link } from "react-router-dom";
+import { AuthContext } from "../auth/AuthContext"; // Import the AuthContext
 
 function Signin() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
-  const { setAuthenticatedUser } = useContext(AuthContext); // Destructure setAuthenticatedUser from context
+  const { authenticatedUser, setAuthenticatedUser } = useContext(AuthContext); // Destructure setAuthenticatedUser from context
 
   const handleUsernameChange = (e) => {
     setName(e.target.value);
@@ -39,6 +40,13 @@ function Signin() {
     }
   };
 
+  const handleLogout = async () => {
+    // Clear the authenticated user state
+    setAuthenticatedUser(null);
+    // Clear the local storage or cookie
+    localStorage.removeItem("user");
+  };
+
   return (
     <div>
       <h1>Sign In!</h1>
@@ -59,6 +67,13 @@ function Signin() {
         <br />
         <button type="submit">Sign In</button>
       </form>
+      {authenticatedUser && <button onClick={handleLogout}>Logout</button>}{" "}
+      {/* This button will only show up if there's an authenticated user */}
+      <span>
+        {"Don't have an account? "}
+        <Link to="/signup">Go to Signup</Link>
+        {" instead."}
+      </span>
     </div>
   );
 }

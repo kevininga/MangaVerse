@@ -7,7 +7,7 @@ import Favorites from "../pages/Favorites";
 import Navbar from "../components/Navbar";
 import Search from "../components/Search";
 
-import { AuthProvider } from "./AuthContext";
+import { AuthProvider } from "../auth/AuthContext";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {

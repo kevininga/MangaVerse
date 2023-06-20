@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { AuthContext } from "../AuthContext"; // Import the AuthContext
+import { AuthContext } from "../auth/AuthContext"; // Import the AuthContext
 
 export default function Signup() {
   const [name, setName] = useState("");
@@ -65,7 +65,7 @@ export default function Signup() {
         <button>Signup</button>
       </form>
       <span>
-        {"Already have an account "}
+        {"Already have an account? "}
         <Link to="/signin">Go to Signin</Link>
         {" instead."}
       </span>

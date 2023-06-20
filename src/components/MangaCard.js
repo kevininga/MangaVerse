@@ -1,3 +1,5 @@
+import React from "react";
+
 const Manga = ({ manga }) => {
   return (
     <div>

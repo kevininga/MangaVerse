@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Search = () => {
@@ -13,7 +14,7 @@ const Search = () => {
     if (lowercaseSearch !== "") {
       try {
         const response = await axios.get(
-          `https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/mangas/title/${lowercaseSearch}`
+          `http://localhost:3000/mangas/title/${lowercaseSearch}`
         );
 
         if (response.data) {
@@ -43,10 +44,12 @@ const Search = () => {
       </form>
       {manga.length > 0 &&
         manga.map((manga) => (
-          <div key={manga._id}>
-            <h2>{manga.title}</h2>
-            <img src={manga.picture_url} alt={manga.title} />
-          </div>
+          <Link to={`/mangas/id/${manga._id}`} key={manga._id}>
+            <div>
+              <h2>{manga.title}</h2>
+              <img src={manga.picture_url} alt={manga.title} />
+            </div>
+          </Link>
         ))}
     </div>
   );

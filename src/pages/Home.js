@@ -1,6 +1,7 @@
 // pages/Home.js
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import "../styles/Home.css";
 
 const Home = () => {
@@ -8,9 +9,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchMangas = async () => {
-      const response = await axios.get(
-        "https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/mangas/all"
-      );
+      const response = await axios.get("http://localhost:3000/mangas/all");
       setMangas(response.data);
     };
 
@@ -21,7 +20,9 @@ const Home = () => {
     <div className="manga-grid">
       {mangas.map((manga) => (
         <div key={manga._id} className="manga-card">
-          <img src={manga.picture_url} alt={manga.title} />
+          <Link to={`/mangas/id/${manga._id}`}>
+            <img src={manga.picture_url} alt={manga.title} />
+          </Link>
           <h3>{manga.title}</h3>
         </div>
       ))}

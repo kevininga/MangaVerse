@@ -1,0 +1,30 @@
+/* styles/MangaDetails.css */
+
+.manga-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 2em auto;
+    max-width: 1200px;
+    text-align: center;
+  }
+  
+  .manga-details img {
+    max-width: 400px;
+    height: auto;
+    margin-right: 2em;
+  }
+  
+  .manga-details h1 {
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+  
+  .manga-details p {
+    line-height: 1.6;
+  }
+  
+  .manga-details .info {
+    max-width: 600px;
+  }
+  

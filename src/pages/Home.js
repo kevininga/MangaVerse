@@ -11,7 +11,9 @@ const Home = () => {
       const response = await axios.get(
         "https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/mangas/all"
       );
+      console.log(response)
       setMangas(response.data);
+      console.log(response.data);
     };
 
     fetchMangas();

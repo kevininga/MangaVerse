@@ -18,6 +18,7 @@ const Home = () => {
       } catch (error) {
         setError(error);
       }
+
     };
 
     fetchMangas();
@@ -35,6 +36,7 @@ const Home = () => {
       ) : (
         <p>No mangas found.</p>
       )}
+
     </div>
   );
 };

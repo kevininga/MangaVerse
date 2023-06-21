@@ -24,6 +24,9 @@ function Signin() {
         }
       );
       if (response.status === 200) {
+        const token = `Bearer ${response.data.token}`;
+        localStorage.setItem("token", token);
+        console.log(token);
         setName("");
         setPassword("");
         console.log(`Success signed in ${name}`);

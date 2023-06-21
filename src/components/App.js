@@ -12,11 +12,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <Router>
+      <Signin />
       <Navbar />
       <Routes>
         <Route path="/search" element={<Search />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/signin" element={<Signin />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Signin />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/mangas/id/:id" element={<MangaDetails />} />
       </Routes>

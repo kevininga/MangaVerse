@@ -10,15 +10,16 @@ const Home = () => {
   useEffect(() => {
     const fetchMangas = async () => {
       const response = await axios.get(
-        "https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/mangas/all",{
-
-        headers: {
-          Authorization: "Bearer a4b2bd6771msh2c09a033218be90p17b986jsna07b85b48652"
-        }
-          
+        "https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/mangas/all",
+        // "http://localhost:3000/mangas/all",
+        {
+          headers: {
+            Authorization:
+              "Bearer a4b2bd6771msh2c09a033218be90p17b986jsna07b85b48652",
+          },
         }
       );
-      console.log(response)
+      console.log(response);
       setMangas(response.data);
       console.log(response.data);
     };

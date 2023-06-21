@@ -1,6 +1,7 @@
 // pages/Home.js
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import "../styles/Home.css";
 
 const Home = () => {
@@ -29,7 +30,9 @@ const Home = () => {
     <div className="manga-grid">
       {mangas.map((manga) => (
         <div key={manga._id} className="manga-card">
-          <img src={manga.picture_url} alt={manga.title} />
+          <Link to={`/mangas/id/${manga._id}`}>
+            <img src={manga.picture_url} alt={manga.title} />
+          </Link>
           <h3>{manga.title}</h3>
         </div>
       ))}

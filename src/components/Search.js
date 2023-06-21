@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Search = () => {
@@ -20,7 +21,7 @@ const Search = () => {
             },
           }
         );
-  
+        
         if (response.data) {
           setManga(response.data);
           console.log(response.data);
@@ -50,10 +51,12 @@ const Search = () => {
       </form>
       {manga.length > 0 &&
         manga.map((manga) => (
-          <div key={manga._id}>
-            <h2>{manga.title}</h2>
-            <img src={manga.picture_url} alt={manga.title} />
-          </div>
+          <Link to={`/mangas/id/${manga._id}`} key={manga._id}>
+            <div>
+              <h2>{manga.title}</h2>
+              <img src={manga.picture_url} alt={manga.title} />
+            </div>
+          </Link>
         ))}
     </div>
   );

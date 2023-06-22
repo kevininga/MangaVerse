@@ -24,10 +24,11 @@ function Signin() {
           password,
         }
       );
+
       if (response.status === 200) {
-        const token = `Bearer ${response.data.token}`;
-        localStorage.setItem("token", token);
+        const token = response.data.token;
         console.log(token);
+        localStorage.setItem("token", token);
         setName("");
         setPassword("");
         console.log(`Success signed in ${name}`);

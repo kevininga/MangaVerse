@@ -13,6 +13,7 @@ export async function signin(username, password) {
   localStorage.setItem(LOCALSTORAGE_KEY, response.data.token);
 
   return response.data;
+
 }
 
 export async function signup(username, password) {
@@ -25,6 +26,13 @@ export async function signup(username, password) {
 }
 
 export async function isTokenValid() {
-  const response = await base.get("/auth/isTokenValid");
-  return response.data;
+  try {
+    const response = await base.get('/auth/isTokenValid');
+    console.log('Response:', response.data);
+    return response.data;
+  } catch (error) {
+    // Handle error
+    console.error('Token validation failed:', error);
+    throw error;
+  }
 }

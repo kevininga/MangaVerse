@@ -1,19 +1,21 @@
 import axios from "axios";
 
-const LOCALSTORAGE_KEY = "token";
+export const LOCALSTORAGE_KEY = "token";
 
 // Create a re-useable axios object, with our API as the baseURL
-const base = axios.create({
-  baseURL: 
-  // "https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/",
-  "http://localhost:3000/",
-});
+const baseURL = "http://localhost:3000/"
+ const base = axios.create({
+  baseURL
+ }
+);
 
 // Interceptors are axios functionality, that allows you to intercept requests and responses
 // Here we're setting the token in localstorage to the Authorization header
-base.interceptors.request.use((config) => {
+base.interceptors.request.use(config => {
   const token = localStorage.getItem(LOCALSTORAGE_KEY);
+  console.log("Token in request:", token); 
   config.headers.Authorization = token;
+  console.log(token)
   return config;
 });
 

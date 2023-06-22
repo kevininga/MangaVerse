@@ -34,6 +34,20 @@
     font-family: 'Bangers', cursive;
     font-size: 1.2em;
 }
+.favorite-button {
+    margin-top: -20px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #2edf3a; /* Red color for delete action */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.favorite-button:hover {
+    background-color: #1f8d2d; /* Darken color on hover */
+}
 
 /* Styles for smaller screens */
 @media (max-width: 768px) {

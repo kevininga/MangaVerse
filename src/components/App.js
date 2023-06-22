@@ -1,4 +1,3 @@
-// App.js
 import React from "react";
 import "../styles/App.css";
 import Home from "../pages/Home";
@@ -8,6 +7,8 @@ import Navbar from "../components/Navbar";
 import Search from "../components/Search";
 import MangaDetails from "../pages/MangaDetails";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/mangas/id/:id" element={<MangaDetails />} />
       </Routes>
+      <ToastContainer />
     </Router>
   );
 }

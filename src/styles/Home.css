@@ -2,28 +2,56 @@
 .manga-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 100px;
     justify-items: center;
     align-items: center;
     padding: 20px;
-  }
+    font-size: 30px;
+}
   
-  .manga-card {
+.manga-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center; /* Center the text */
-  }
+    text-align: center;
+    color: white;
+    height: 450px;
+    font-family: 'Bangers', cursive;
+}
   
-  .manga-card img {
+.manga-card img {
     width: 100%;
-    max-width: 400px;
-    height: 300px;
-  }
+    max-width: 300px;
+    height: auto;
+}
+
+.manga-card h3 {
+    max-width: 300px;
+    word-wrap: break-word;
+    text-align: center;
+    height: 40px;
+    margin-top: 10px;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .manga-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
   
-  .manga-card h3 {
-    max-width: 400px; /* Limit the width of the title */
-    word-wrap: break-word; /* Allow long titles to wrap to a new line */
-    text-align: center; /* Center the title text */
-  }
+    .manga-card img, .manga-card h3 {
+      max-width: 200px;
+    }
+}
   
+@media (max-width: 480px) {
+    .manga-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 20px;
+    }
+  
+    .manga-card img, .manga-card h3 {
+      max-width: 150px;
+    }
+}

@@ -1,0 +1,91 @@
+/* styles/Favorites.css */
+.intro-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh; /* This will make the div take up the full viewport height */
+    color: white;
+    font-family: 'Bangers', cursive;
+    font-size: 6em;
+}
+
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 100px;
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 30px;
+}
+  
+.favorite-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    height: 450px;
+    font-family: 'Bangers', cursive;
+}
+  
+.favorite-item img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+.favorite-item h3 {
+    max-width: 300px;
+    word-wrap: break-word;
+    text-align: center;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.favorite-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.favorite-delete-button {
+    margin-top: -20px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #f44336; /* Red color for delete action */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.favorite-delete-button:hover {
+    background-color: #d32f2f; /* Darken color on hover */
+}
+
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .favorites-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+  
+    .favorite-item img, .favorite-item h3 {
+      max-width: 200px;
+    }
+}
+  
+@media (max-width: 480px) {
+    .favorites-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 20px;
+    }
+  
+    .favorite-item img, .favorite-item h3 {
+      max-width: 150px;
+    }
+}

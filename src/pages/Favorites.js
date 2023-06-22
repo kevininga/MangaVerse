@@ -1,12 +1,58 @@
-import React from "react";
-import "../pages/Favorites";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
+import "../styles/Favorites.css";
 
-function Favorites() {
+const Favorites = () => {
+  const [favorites, setFavorites] = useState([]);
+
+  useEffect(() => {
+    fetchFavorites();
+  }, []);
+
+  const fetchFavorites = async () => {
+    try {
+      const response = await axios.get("http://localhost:3000/favorites/manga");
+      setFavorites(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const deleteFavorite = async (mangaId) => {
+    try {
+      await axios.delete(`http://localhost:3000/favorites/manga/${mangaId}`);
+      toast.success("Manga removed from favorites!");
+      fetchFavorites(); // Refresh the favorites
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to remove manga from favorites");
+    }
+  };
+
+  if (!favorites.length) {
+    return <div className="intro-text">No favorites yet!</div>;
+  }
+
   return (
-    <div>
-      <h1>Favorites!</h1>
+    <div className="favorites-grid">
+      {favorites.map((favorite) => (
+        <div key={favorite._id} className="favorite-item">
+          <Link to={`/mangas/id/${favorite.manga._id}`}>
+            <img src={favorite.manga.picture_url} alt={favorite.manga.title} />
+          </Link>
+          <h3>{favorite.manga.title}</h3>
+          <button
+            className="favorite-delete-button"
+            onClick={() => deleteFavorite(favorite._id)}
+          >
+            Delete from Favorites
+          </button>
+        </div>
+      ))}
     </div>
   );
-}
+};
 
 export default Favorites;

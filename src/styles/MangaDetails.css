@@ -7,24 +7,66 @@
     margin: 2em auto;
     max-width: 1200px;
     text-align: center;
-  }
+    color: white;
+}
   
-  .manga-details img {
+.manga-details img {
     max-width: 400px;
     height: auto;
     margin-right: 2em;
-  }
+}
   
-  .manga-details h1 {
-    font-size: 2em;
-    margin-bottom: 1em;
-  }
+.manga-details h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 4em;
+}
   
-  .manga-details p {
-    line-height: 1.6;
-  }
-  
-  .manga-details .info {
-    max-width: 600px;
-  }
-  
+.manga-details p {
+    line-height: 1.5;
+}
+
+.manga-details .info {
+    font-family: 'Kosugi Maru', sans-serif;
+    font-size: 1em;
+}
+
+.manga-details .info p span {
+    font-family: 'Bangers', cursive;
+    font-size: 1.2em;
+}
+.favorite-button {
+    margin-top: -20px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #2edf3a; /* Red color for delete action */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.favorite-button:hover {
+    background-color: #1f8d2d; /* Darken color on hover */
+}
+
+/* Styles for smaller screens */
+@media (max-width: 768px) {
+    .manga-details {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .manga-details img {
+        max-width: 80%;
+        margin: 0 auto 2em; /* Center the image and add space below */
+    }
+
+    .manga-details h1 {
+        font-size: 2em;
+    }
+
+    .manga-details .info p span {
+        font-size: 1em;
+    }
+}

@@ -1,6 +1,8 @@
+// components/Search.js
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import "../styles/Search.css";
 
 const Search = () => {
   const [search, setSearch] = useState("");
@@ -8,26 +10,19 @@ const Search = () => {
 
   const handleSearch = async (e) => {
     e.preventDefault();
-  
+
     let lowercaseSearch = search.toLowerCase();
-  
+
     if (lowercaseSearch !== "") {
       try {
         const response = await axios.get(
-          `https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/mangas/title/${lowercaseSearch}`,
-          {
-            headers: {
-              Authorization: "Bearer a4b2bd6771msh2c09a033218be90p17b986jsna07b85b48652",
-            },
-          }
+          `http://localhost:3000/mangas/title/${lowercaseSearch}`
         );
-        
+
         if (response.data) {
           setManga(response.data);
-          console.log(response.data);
         } else {
           setManga([]);
-          console.log(setManga)
         }
       } catch (error) {
         console.error(error);
@@ -37,7 +32,7 @@ const Search = () => {
       setManga([]);
     }
   };
-  
+
   return (
     <div>
       <form onSubmit={handleSearch}>
@@ -49,15 +44,15 @@ const Search = () => {
         />
         <button type="submit">Search</button>
       </form>
-      {manga.length > 0 &&
-        manga.map((manga) => (
-          <Link to={`/mangas/id/${manga._id}`} key={manga._id}>
-            <div>
-              <h2>{manga.title}</h2>
+      <div className="search-results">
+        {manga.length > 0 &&
+          manga.map((manga) => (
+            <Link key={manga._id} to={`/mangas/id/${manga._id}`}>
               <img src={manga.picture_url} alt={manga.title} />
-            </div>
-          </Link>
-        ))}
+              <h2>{manga.title}</h2>
+            </Link>
+          ))}
+      </div>
     </div>
   );
 };

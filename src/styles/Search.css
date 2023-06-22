@@ -1,6 +1,14 @@
 /* styles/Search.css */
+.search-results {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+}
 
 .search-results img {
-  max-width: 100px; 
-  height: auto;
+  width: 100%;
+  max-width: 200px;  /* adjust this value to change the image size */
+  height: auto;  /* keep the aspect ratio of the image */
 }

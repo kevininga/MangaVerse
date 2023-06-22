@@ -12,7 +12,10 @@ function Navbar({ children }) {
             <Search />
           </li>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Signup</Link>
+          </li>
+          <li>
+            <Link to="/home">Home</Link>
           </li>
           <li>
             <Link to="/signin">Signin</Link>

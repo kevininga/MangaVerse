@@ -1,23 +1,30 @@
 // pages/Home.js
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../styles/Home.css";
+import { LOCALSTORAGE_KEY } from "../auth/baseURL";
+import { AuthContext } from "../auth/AuthContextComponent";
 
+// console.log(`this is from home ${LOCALSTORAGE_KEY}`);
 const Home = () => {
+  const { isLoggedIn } = useContext(AuthContext);
+
+  console.log(isLoggedIn);
+
   const [mangas, setMangas] = useState([]);
 
   useEffect(() => {
+    // if (isLoggedIn) {
     const fetchMangas = async () => {
       const response = await axios.get(
         // "https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/mangas/all",
-        "http://localhost:3000/mangas/all"
-        // {
-        //   headers: {
-        //     Authorization:
-        //       "Bearer a4b2bd6771msh2c09a033218be90p17b986jsna07b85b48652",
-        //   },
-        // }
+        "http://localhost:3000/mangas/all",
+        {
+          headers: {
+            Authorization: LOCALSTORAGE_KEY,
+          },
+        }
       );
       console.log(response);
       setMangas(response.data);
@@ -25,9 +32,10 @@ const Home = () => {
     };
 
     fetchMangas();
+    // }
   }, []);
 
-  return (
+  return isLoggedIn ? (
     <div className="manga-grid">
       {mangas.map((manga) => (
         <div key={manga._id} className="manga-card">
@@ -38,6 +46,8 @@ const Home = () => {
         </div>
       ))}
     </div>
+  ) : (
+    <span>NOPE</span>
   );
 };
 

@@ -1,6 +1,6 @@
 import base from "./baseURL";
 
-const LOCALSTORAGE_KEY = "token";
+export  const LOCALSTORAGE_KEY = "token";
 
 export async function signin(username, password) {
   // Make request to singin user to retrieve a token

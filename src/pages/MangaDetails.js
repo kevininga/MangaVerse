@@ -32,8 +32,12 @@ const MangaDetails = () => {
       <img src={manga.picture_url} alt={manga.title} />
       <div className="info">
         <h1>{manga.title}</h1>
-        <p>Published: {manga.aired_on}</p>
-        <p>Synopsis: {manga.synopsis}</p>
+        <p>
+          <span>Published:</span> {manga.aired_on}
+        </p>
+        <p>
+          <span>Synopsis:</span> {manga.synopsis}
+        </p>
       </div>
     </div>
   );

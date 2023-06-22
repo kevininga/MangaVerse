@@ -9,13 +9,13 @@ const Search = () => {
   const handleSearch = async (e) => {
     e.preventDefault();
 
-    let lowercaseSearch = search.toLowerCase();
+    let lowercaseSearch = search;
 
     if (lowercaseSearch !== "") {
       try {
         const response = await axios.get(
           // `https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/mangas/title/${lowercaseSearch}`,
-          `http://localhost:3000/mangas/title/${lowercaseSearch}`,
+          `http://localhost:3000/mangas/title/${lowercaseSearch}`
           // {
           //   headers: {
           //     Authorization:
@@ -24,12 +24,14 @@ const Search = () => {
           // }
         );
 
+        console.log(response);
+
         if (response.data) {
           setManga(response.data);
-          console.log(response.data);
+          // console.log(response.data);
         } else {
           setManga([]);
-          console.log(setManga);
+          // console.log(setManga);
         }
       } catch (error) {
         console.error(error);

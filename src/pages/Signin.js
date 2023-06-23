@@ -2,9 +2,15 @@ import React, { useState, useContext } from "react";
 import axios from "axios";
 import { LOCALSTORAGE_KEY } from "../auth/baseURL";
 import { AuthContext } from "../auth/AuthContextComponent";
+import logo from "../assets/logo/png/logo.png"
+import "../styles/Signin.css";
+
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Signin() {
   const { setIsLoggedIn } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -23,9 +29,8 @@ function Signin() {
       const token = localStorage.getItem("token");
 
       const response = await axios.post(
-        // "https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/users/signin",
-        `http://localhost:3000/users/signin`,
-
+        "https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/users/signin",
+        // "http://localhost:3000/users/signin",
         {
           name,
           password,
@@ -50,6 +55,7 @@ function Signin() {
         setIsLoggedIn(logged);
 
         console.log(`Success signed in ${name}`);
+        navigate("/home");
       } else {
         console.log("Error:", response.status);
       }
@@ -59,18 +65,17 @@ function Signin() {
   };
 
   return (
-    <div>
-      <h1>Sign In!</h1>
+    <div className="sign-in">
+         <img src={logo} alt="logo" />
       <form onSubmit={handleSubmit}>
         <label>
-          Username:
-          <input type="text" value={name} onChange={handleUsernameChange} />
+          <input type="text" placeholder="username..." value={name} onChange={handleUsernameChange} />
         </label>
         <br />
         <label>
-          Password:
           <input
             type="password"
+            placeholder="password..."
             value={password}
             onChange={handlePasswordChange}
           />
@@ -78,6 +83,11 @@ function Signin() {
         <br />
         <button type="submit">Sign In</button>
       </form>
+      <span>
+        {"Dont have an Account?"}
+        <Link to="/signup">Go to Signup</Link>
+        {" instead."}
+      </span>
     </div>
   );
 }

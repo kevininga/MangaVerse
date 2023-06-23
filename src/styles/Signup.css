@@ -1,39 +1,30 @@
-/* Styles for Signin component */
-.sign-in {
+/* Styles for Signup component */
+.signup-container {
     text-align: center;
     margin-top: 50px;
   }
   
-  .sign-in img {
-    width: auto;
-    height: auto;
+  .signup-container h1 {
+    font-size: 2em;
     margin-bottom: 20px;
   }
   
-  
-  .sign-in form {
+  .signup-container form {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
   }
   
-  .sign-in label {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-  }
-  
-  .sign-in label input {
+  .signup-container input {
     width: 300px;
     height: 40px;
-    margin-top: 5px;
+    margin-bottom: 10px;
     padding: 5px;
     font-size: 1em;
-    color: #fff;
   }
   
-  .sign-in button {
+  .signup-container button {
     width: 200px;
     height: 40px;
     background-color: #2edf3a;
@@ -45,6 +36,20 @@
     transition: background-color 0.3s ease;
   }
   
-  .sign-in button:hover {
+  .signup-container button:hover {
     background-color: #1f8d2d;
   }
+  
+  .signup-container span {
+    font-size: 0.9em;
+  }
+  
+  .signup-container a {
+    color: #2edf3a;
+    text-decoration: none;
+  }
+  
+  .signup-container a:hover {
+    text-decoration: underline;
+  }
+  

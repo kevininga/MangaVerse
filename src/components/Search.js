@@ -10,7 +10,7 @@ const Search = () => {
   const [manga, setManga] = useState([]);
   const [showResults, setShowResults] = useState(false);
   const { isLoggedIn } = useContext(AuthContext);
-
+  // eslint-disable-next-line
   const handleSearch = async (e) => {
     e.preventDefault();
     console.log("cliked");

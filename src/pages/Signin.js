@@ -2,13 +2,19 @@ import React, { useState, useContext } from "react";
 import axios from "axios";
 import { LOCALSTORAGE_KEY } from "../auth/baseURL";
 import { AuthContext } from "../auth/AuthContextComponent";
+
 import logo from "../assets/logo/png/logo.png"
 import "../styles/Signin.css";
+
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 
 
 function Signin() {
   const { setIsLoggedIn } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -53,6 +59,7 @@ function Signin() {
         setIsLoggedIn(logged);
 
         console.log(`Success signed in ${name}`);
+        navigate("/home");
       } else {
         console.log("Error:", response.status);
       }
@@ -80,6 +87,11 @@ function Signin() {
         <br />
         <button type="submit">Sign In</button>
       </form>
+      <span>
+        {"Dont have an Account?"}
+        <Link to="/signup">Go to Signup</Link>
+        {" instead."}
+      </span>
     </div>
   );
 }

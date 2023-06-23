@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+
 import "../styles/MangaDetails.css";
+// eslint-disable-next-line
 import { toast } from "react-toastify";
 
 const MangaDetails = () => {

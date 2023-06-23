@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+
 import "../styles/Signup.css";
+
+import { useNavigate } from "react-router-dom";
+
 
 export default function Signup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [verifyPassword, setVerifyPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -28,7 +33,8 @@ export default function Signup() {
         setEmail("");
         setPassword("");
         setVerifyPassword("");
-        console.log("Success");
+        console.log("Success")
+        navigate("/signin");;
       } else {
         console.log("Error:", response.status);
       }

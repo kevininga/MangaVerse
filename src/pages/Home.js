@@ -15,25 +15,25 @@ const Home = () => {
   const [mangas, setMangas] = useState([]);
 
   useEffect(() => {
-    // if (isLoggedIn) {
-    const fetchMangas = async () => {
-      const response = await axios.get(
-        // "https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/mangas/all",
-        "http://localhost:3000/mangas/all",
-        {
-          headers: {
-            Authorization: LOCALSTORAGE_KEY,
-          },
-        }
-      );
-      console.log(response);
-      setMangas(response.data);
-      console.log(response.data);
-    };
+    if (isLoggedIn) {
+      const fetchMangas = async () => {
+        const response = await axios.get(
+          // "https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/mangas/all",
+          "http://localhost:3000/mangas/all",
+          {
+            headers: {
+              Authorization: LOCALSTORAGE_KEY,
+            },
+          }
+        );
+        console.log(response);
+        setMangas(response.data);
+        console.log(response.data);
+      };
 
-    fetchMangas();
-    // }
-  }, []);
+      fetchMangas();
+    }
+  }, [isLoggedIn]);
 
   return isLoggedIn ? (
     <div className="manga-grid">

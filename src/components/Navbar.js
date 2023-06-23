@@ -21,6 +21,9 @@ function Navbar({ children }) {
             <Link to="/signin">Signin</Link>
           </li>
           <li>
+            <Link to="/signout">Signout</Link>
+          </li>
+          <li>
             <Link to="/favorites">Favorites</Link>
           </li>
         </ul>

@@ -1,33 +1,25 @@
-import React, { createContext, useEffect, useState } from "react";
-import { isTokenValid } from "./validToken";
+import React, { createContext, useState } from "react";
 import { LOCALSTORAGE_KEY } from "../auth/baseURL";
 
-// Create a Context Provider called AuthProvider
 export const AuthContext = createContext(null);
 
-// Create our own Context component in which data about auth lives on its state
 export default function AuthContextComponent({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [name, setName] = useState({});
 
-  // Write some logic to onload check if the user is logged in, then set loggen in accordingly.
-  useEffect(() => {
+  useState(() => {
     const token = localStorage.getItem(LOCALSTORAGE_KEY);
-    if (token) {
-      isTokenValid().then((response) => setIsLoggedIn(response.valid));
-    }
-  }, []);
+    setIsLoggedIn(!!token);
+  });
 
-  useEffect(() => {
-    const isLoggedIn = localStorage.getItem("token");
-    console.log(isLoggedIn);
-    setIsLoggedIn(isLoggedIn ? true : false);
-  }, []);
+  const handleLogout = () => {
+    localStorage.removeItem(LOCALSTORAGE_KEY);
+    localStorage.removeItem("isloggedin"); // Remove isloggedin key
+    setIsLoggedIn(false);
+  };
 
-  // AuthContext, will simply render the AuthProvider,
-  // and pass its state data into it, so other components can use it.
   return (
-    <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn, name }}>
+    <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn, name, handleLogout }}>
       {children}
     </AuthContext.Provider>
   );

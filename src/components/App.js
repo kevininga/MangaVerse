@@ -1,20 +1,16 @@
 import React from "react";
-import { Routes, Route} from 'react-router-dom'
-import { useContext } from 'react'
+import { useContext } from "react";
 import { AuthContext } from "../auth/AuthContextComponent";
-
-import "../styles/App.css";
-
+import { Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import Navbar from "../components/Navbar";
 import Home from "../pages/Home";
 import Signin from "../pages/Signin";
 import Signup from "../pages/Signup";
 import Signout from "../components/Signout";
 import Favorites from "../pages/Favorites";
-import Navbar from "../components/Navbar";
 import Search from "../components/Search";
 import MangaDetails from "../pages/MangaDetails";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
@@ -30,16 +26,14 @@ function App() {
         {isLoggedIn && (
           <>
             <Route path="/search" element={<Search />} />
-            <Route path="/home" element={<Home />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/mangas/id/:id" element={<MangaDetails />} />
-            <Route path="/signout" element= {<Signout/>}  />
+            <Route path="/signout" element={<Signout />} />
           </>
         )}
       </Routes>
-    </>
       <ToastContainer />
-    </Router>
+    </>
   );
 }
 

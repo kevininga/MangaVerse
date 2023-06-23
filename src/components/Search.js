@@ -1,51 +1,56 @@
 // components/Search.js
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../styles/Search.css";
+import { AuthContext } from "../auth/AuthContextComponent";
 
 const Search = () => {
   const [search, setSearch] = useState("");
   const [manga, setManga] = useState([]);
   const [showResults, setShowResults] = useState(false);
+  const { isLoggedIn } = useContext(AuthContext);
 
   const handleSearch = async (e) => {
     e.preventDefault();
-
+    console.log("cliked");
 
     let lowercaseSearch = search.toLowerCase();
-
-    if (lowercaseSearch !== "") {
-      try {
-        const response = await axios.get(
-          // `https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/mangas/title/${lowercaseSearch}`,
-          `http://localhost:3000/mangas/title/${lowercaseSearch}`
-          // {
-          //   headers: {
-          //     Authorization:
-          //       "Bearer a4b2bd6771msh2c09a033218be90p17b986jsna07b85b48652",
-          //   },
-          // }
-        );
-        
-        if (response.data) {
-          setManga(response.data);
-          setShowResults(true);
-        } else {
+    console.log(isLoggedIn);
+    if (isLoggedIn) {
+      if (lowercaseSearch !== "") {
+        try {
+          ;
+          const response = await axios.get(
+            // `https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/mangas/title/${lowercaseSearch}`,
+            `http://localhost:3000/mangas/title/${lowercaseSearch}`
+            // {
+            //   headers: {
+            //     Authorization:
+            //       "Bearer a4b2bd6771msh2c09a033218be90p17b986jsna07b85b48652",
+            //   },
+            // }
+          );
+          console.log("Mapping manga:", manga)
+          if (response.data) {
+            setManga(response.data);
+            setShowResults(true);
+            console.log(response.data);
+          } else {
+            setManga([]);
+            setShowResults(false);
+          }
+        } catch (error) {
+          console.error(error);
           setManga([]);
           setShowResults(false);
         }
-      } catch (error) {
-        console.error(error);
+      } else {
         setManga([]);
         setShowResults(false);
       }
-    } else {
-      setManga([]);
-      setShowResults(false);
     }
   };
-
 
   const handleExit = () => {
     setShowResults(false);
@@ -63,16 +68,16 @@ const Search = () => {
         <button type="submit">Search</button>
       </form>
       {showResults && (
-      <div className="search-results">
-        {manga.length > 0 &&
-          manga.map((manga) => (
-            <Link key={manga._id} to={`/mangas/id/${manga._id}`}>
-              <img src={manga.picture_url} alt={manga.title} />
-              <h2>{manga.title}</h2>
-            </Link>
-          ))}
+        <div className="search-results">
+          {manga.length > 0 &&
+            manga.map((mangaItem) => (
+              <Link key={mangaItem._id} to={`/mangas/id/${mangaItem._id}`}>
+                <img src={mangaItem.picture_url} alt={mangaItem.title} />
+                <h2>{mangaItem.title}</h2>
+              </Link>
+            ))}
           <button onClick={handleExit}>Exit</button>
-      </div>
+        </div>
       )}
     </div>
   );

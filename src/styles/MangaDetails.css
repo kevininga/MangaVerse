@@ -1,87 +1,36 @@
 .manga-details {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
     margin: 2em auto;
-    max-width: 1200px;
     text-align: center;
     color: white;
   }
   
   .manga-details img {
-    max-width: 400px;
+    max-width: 90%;
     height: auto;
-    margin-right: 2em;
-  }
-  
-  .manga-details h1 {
-    font-family: 'Bangers', cursive;
-    font-size: 4em;
-  }
-  
-  .manga-details p {
-    line-height: 1.5;
-  }
-  
-  .manga-details .info p a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .manga-details .info .authors {
-    display: flex;
-    align-items: center;
-    margin-top: -60px;
-    justify-content: center;
-  }
-  
-  .manga-details .info .authors h3 {
-    font-family: 'Bangers', cursive;
-    font-size: 1.2em;
-    margin-right: 0.5rem;
-  }
-  
-  .manga-details .info .authors .author-names {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-left: 0.5rem;
-  }
-  
-  .manga-details .info .authors .author-names span {
-    margin-right: 0.5rem;
-    font-family: 'Kosugi Maru', sans-serif;
-    font-size: 1em;
-  }
-  
-  .manga-details .info .authors .author-names span:last-child {
-    margin-right: 0;
+    margin-bottom: 2em;
   }
   
   .manga-details .info {
-    font-family: 'Kosugi Maru', sans-serif;
-    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
-  .manga-details .info p span {
-    font-family: 'Bangers', cursive;
-    font-size: 1.2em;
+  @media(min-width: 768px) {
+    .manga-details {
+      flex-direction: row;
+    }
+  
+    .manga-details img {
+      margin-right: 2em;
+      max-width: 400px;
+    }
   }
   
-  .favorite-button {
-    margin-top: -20px;
-    padding: 10px 20px;
-    color: #fff;
-    background-color: #2edf3a;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .favorite-button:hover {
-    background-color: #1f8d2d;
-  }
   .modal {
     position: fixed;
     top: 0;
@@ -97,24 +46,14 @@
   .modal-content {
     background-color: white;
     padding: 20px;
+    width: 90%;
     max-width: 500px;
     max-height: 80vh;
     overflow-y: auto;
   }
   
   .modal-content img {
-    max-width: 100%;
+    width: 100%;
     margin-bottom: 10px;
-  }
-  
-  .modal-close {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    color: white;
   }
   

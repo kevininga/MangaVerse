@@ -1,4 +1,3 @@
-// pages/MangaDetails.js
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -8,6 +7,7 @@ import { toast } from "react-toastify";
 const MangaDetails = () => {
   const { id } = useParams();
   const [manga, setManga] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const fetchManga = async () => {
@@ -49,9 +49,40 @@ const MangaDetails = () => {
 
   return (
     <div className="manga-details">
-      <img src={manga.picture_url} alt={manga.title} />
+      <img
+        src={manga.picture_url}
+        alt={manga.title}
+        onClick={() => setShowModal(true)}
+      />
+
+      {showModal && (
+        <div className="modal">
+          <button className="modal-close" onClick={() => setShowModal(false)}>
+            &times;
+          </button>
+          <div className="modal-content">
+            {manga.firstTenPages.map((url, index) => (
+              <img key={index} src={url} alt={`page ${index + 1}`} />
+            ))}
+          </div>
+        </div>
+      )}
+
       <div className="info">
         <h1>{manga.title}</h1>
+        <div className="authors">
+          <h3>By:</h3>
+          <p className="author-names">
+            {manga.authors.map((author, index) => (
+              <span key={index}>
+                <a href={author.url} target="_blank" rel="noopener noreferrer">
+                  {author.name}
+                </a>
+                {index < manga.authors.length - 1 && ","}
+              </span>
+            ))}
+          </p>
+        </div>
         <p>
           <span>Published:</span> {manga.aired_on}
         </p>

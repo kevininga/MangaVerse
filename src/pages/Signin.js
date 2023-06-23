@@ -71,7 +71,7 @@ function Signin() {
         <br />
         <label>
           <input
-            type="text"
+            type="password"
             placeholder="password..."
             value={password}
             onChange={handlePasswordChange}

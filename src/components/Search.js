@@ -1,3 +1,4 @@
+// components/Search.js
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -53,16 +54,16 @@ const Search = () => {
         <button type="submit">Search</button>
       </form>
       {showResults && (
-        <div className="search-results">
-          {manga.length > 0 &&
-            manga.map((manga) => (
-              <Link key={manga._id} to={`/mangas/id/${manga._id}`}>
-                <img src={manga.picture_url} alt={manga.title} />
-                <h2>{manga.title}</h2>
-              </Link>
-            ))}
+      <div className="search-results">
+        {manga.length > 0 &&
+          manga.map((manga) => (
+            <Link key={manga._id} to={`/mangas/id/${manga._id}`}>
+              <img src={manga.picture_url} alt={manga.title} />
+              <h2>{manga.title}</h2>
+            </Link>
+          ))}
           <button onClick={handleExit}>Exit</button>
-        </div>
+      </div>
       )}
     </div>
   );

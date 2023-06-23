@@ -2,6 +2,8 @@ import React, { useState, useContext } from "react";
 import axios from "axios";
 import { LOCALSTORAGE_KEY } from "../auth/baseURL";
 import { AuthContext } from "../auth/AuthContextComponent";
+import logo from "../assets/logo/png/logo.png"
+import "../styles/Signin.css";
 
 
 
@@ -25,7 +27,8 @@ function Signin() {
       const token = localStorage.getItem("token");
 
       const response = await axios.post(
-        "https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/users/signin",
+        // "https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/users/signin",
+        "http://localhost:3000/users/signin",
         {
           name,
           password,
@@ -59,18 +62,17 @@ function Signin() {
   };
 
   return (
-    <div>
-      <h1>Sign In!</h1>
+    <div className="sign-in">
+         <img src={logo} alt="logo" />
       <form onSubmit={handleSubmit}>
         <label>
-          Username:
-          <input type="text" value={name} onChange={handleUsernameChange} />
+          <input type="text" placeholder="username..." value={name} onChange={handleUsernameChange} />
         </label>
         <br />
         <label>
-          Password:
           <input
-            type="password"
+            type="text"
+            placeholder="password..."
             value={password}
             onChange={handlePasswordChange}
           />

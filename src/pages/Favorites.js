@@ -15,7 +15,8 @@ const Favorites = () => {
 
   const fetchFavorites = async () => {
     try {
-      const response = await axios.get("https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/favorites/manga");
+      // const response = await axios.get("https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/favorites/manga");
+      const response = await axios.get("http://localhost:3000/favorites/manga");
       setFavorites(response.data);
     } catch (error) {
       console.error(error);
@@ -24,7 +25,8 @@ const Favorites = () => {
 
   const deleteFavorite = async (mangaId) => {
     try {
-      await axios.delete(`https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/favorites/manga/${mangaId}`);
+      // await axios.delete(`https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/favorites/manga/${mangaId}`);
+      await axios.delete(`http://localhost:3000/favorites/manga/${mangaId}`);
       toast.success("Manga removed from favorites!");
       fetchFavorites(); // Refresh the favorites
     } catch (error) {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "../styles/Signup.css";
 
 export default function Signup() {
   const [name, setName] = useState("");
@@ -12,7 +13,8 @@ export default function Signup() {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/users/signup",
+        // "https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/users/signup",
+        "http://localhost:3000/users/signup",
 
         {
           name,

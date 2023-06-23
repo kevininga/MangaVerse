@@ -1,9 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/Navbar.css"; // include this if you have specific styles for the navbar
+import "../styles/Navbar.css";
 import Search from "../components/Search";
+import { useContext } from "react";
+import { AuthContext } from "../auth/AuthContextComponent";
 
 function Navbar({ children }) {
+  const { handleLogout } = useContext(AuthContext);
+
+  const handleClickSignout = () => {
+    handleLogout();
+    console.log("Successfully logged out");
+  };
+
   return (
     <div>
       <nav>
@@ -21,10 +30,10 @@ function Navbar({ children }) {
             <Link to="/">Signin</Link>
           </li>
           <li>
-            <Link to="/signout">Signout</Link>
+            <Link to="/favorites">Favorites</Link>
           </li>
           <li>
-            <Link to="/favorites">Favorites</Link>
+            <button onClick={handleClickSignout}>Signout</button>
           </li>
         </ul>
       </nav>

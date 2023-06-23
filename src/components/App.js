@@ -1,4 +1,3 @@
-// App.js
 import React from "react";
 import { Routes, Route} from 'react-router-dom'
 import { useContext } from 'react'
@@ -14,7 +13,9 @@ import Favorites from "../pages/Favorites";
 import Navbar from "../components/Navbar";
 import Search from "../components/Search";
 import MangaDetails from "../pages/MangaDetails";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
@@ -37,6 +38,8 @@ function App() {
         )}
       </Routes>
     </>
+      <ToastContainer />
+    </Router>
   );
 }
 

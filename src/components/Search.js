@@ -1,15 +1,19 @@
+// components/Search.js
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import "../styles/Search.css";
 
 const Search = () => {
   const [search, setSearch] = useState("");
   const [manga, setManga] = useState([]);
+  const [showResults, setShowResults] = useState(false);
 
   const handleSearch = async (e) => {
     e.preventDefault();
 
-    let lowercaseSearch = search;
+
+    let lowercaseSearch = search.toLowerCase();
 
     if (lowercaseSearch !== "") {
       try {
@@ -23,23 +27,28 @@ const Search = () => {
           //   },
           // }
         );
-
-        console.log(response);
-
+        
         if (response.data) {
           setManga(response.data);
-          // console.log(response.data);
+          setShowResults(true);
         } else {
           setManga([]);
-          // console.log(setManga);
+          setShowResults(false);
         }
       } catch (error) {
         console.error(error);
         setManga([]);
+        setShowResults(false);
       }
     } else {
       setManga([]);
+      setShowResults(false);
     }
+  };
+
+
+  const handleExit = () => {
+    setShowResults(false);
   };
 
   return (
@@ -53,15 +62,18 @@ const Search = () => {
         />
         <button type="submit">Search</button>
       </form>
-      {manga.length > 0 &&
-        manga.map((manga) => (
-          <Link to={`/mangas/id/${manga._id}`} key={manga._id}>
-            <div>
-              <h2>{manga.title}</h2>
+      {showResults && (
+      <div className="search-results">
+        {manga.length > 0 &&
+          manga.map((manga) => (
+            <Link key={manga._id} to={`/mangas/id/${manga._id}`}>
               <img src={manga.picture_url} alt={manga.title} />
-            </div>
-          </Link>
-        ))}
+              <h2>{manga.title}</h2>
+            </Link>
+          ))}
+          <button onClick={handleExit}>Exit</button>
+      </div>
+      )}
     </div>
   );
 };

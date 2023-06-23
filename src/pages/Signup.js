@@ -18,8 +18,8 @@ export default function Signup() {
     event.preventDefault();
     try {
       const response = await axios.post(
-        // "https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/users/signup",
-        "http://localhost:3000/users/signup",
+        "https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/users/signup",
+        // "http://localhost:3000/users/signup",
 
         {
           name,

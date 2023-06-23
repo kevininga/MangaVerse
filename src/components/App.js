@@ -8,7 +8,7 @@ import Home from "../pages/Home";
 import Search from "../components/Search";
 import Favorites from "../pages/Favorites";
 import MangaDetails from "../pages/MangaDetails";
-import Signout from "./Signout";
+// import Signout from "./Signout";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../auth/AuthContextComponent";
 
@@ -45,7 +45,7 @@ function App() {
             <Route path="/search" element={<Search />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/mangas/id/:id" element={<MangaDetails />} />
-            <Route path="/signout" element={<Signout />} />
+            {/* <Route path="/signout" element={<Signout />} /> */}
           </>
         )}
         <Route path="/*" element={<Navigate to="/" replace />} />

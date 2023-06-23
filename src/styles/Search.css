@@ -3,53 +3,49 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  justify-items: center;
-  align-items: center;
+  justify-items: left;
+  align-items: left;
   margin-top: 10%;
 }
 
 .search-results img {
   width: 100%;
-  max-width: 200px;  /* adjust this value to change the image size */
-  height: auto;  /* keep the aspect ratio of the image */
+  max-width: 200px; /* adjust this value to change the image size */
+  height: auto; /* keep the aspect ratio of the image */
 }
 
 input {
-  
   border-radius: 5px;
   border: 0;
   background-color: white;
- 
   letter-spacing: 0.5px;
-  text-transform: uppercase;
-  transition: all .5s ease;
-
+  transition: all 0.5s ease;
   width: 276px;
- }
+}
 
 button {
   padding: 4px 4px;
   border-radius: 10px;
   border: 0;
   background-color: white;
-  box-shadow: #8CC63F;
+  box-shadow: #8cc63f;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  transition: all .5s ease;
- }
- 
- button:hover {
+  transition: all 0.5s ease;
+}
+
+button:hover {
   letter-spacing: 3px;
-  background-color:#8CC63F;
+  background-color: #8cc63f;
   color: hsl(0, 0%, 100%);
-  box-shadow: #8CC63F;
- }
- 
- button:active {
+  box-shadow: #8cc63f;
+}
+
+button:active {
   letter-spacing: 3px;
-  background-color: #8CC63F;
+  background-color: #8cc63f;
   color: hsl(0, 0%, 100%);
-  box-shadow: #8CC63F;
+  box-shadow: #8cc63f;
   transform: translateY(10px);
   transition: 100ms;
- } 
+}

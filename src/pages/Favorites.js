@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+// eslint-disable-next-line
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+// eslint-disable-next-line
 import "../styles/Favorites.css";
 import gif from "../assets/gif/ZK.gif";
 

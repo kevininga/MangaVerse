@@ -19,6 +19,18 @@ function App() {
   useEffect(() => {
     const logged = localStorage.getItem("isloggedin");
     setIsLoggedIn(logged);
+
+    const handleBeforeUnload = () => {
+      // Perform sign out logic here
+      setIsLoggedIn(false);
+      localStorage.clear();
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
   }, [setIsLoggedIn]);
 
   return (

@@ -1,26 +1,124 @@
 .manga-details {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: space-around;
     margin: 2em auto;
+    max-width: 1200px;
     text-align: center;
     color: white;
   }
   
   .manga-details img {
-    max-width: 90%;
+    max-width: 400px;
     height: auto;
-    margin-bottom: 2em;
+    margin-right: 2em;
+  }
+  
+  .manga-details h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 4em;
+  }
+  
+  .manga-details p {
+    line-height: 1.5;
+  }
+  
+  .manga-details .info p a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .manga-details .info .authors {
+    display: flex;
+    align-items: center;
+    margin-top: -60px;
+    justify-content: center;
+  }
+  
+  .manga-details .info .authors h3 {
+    font-family: 'Bangers', cursive;
+    font-size: 1.2em;
+    margin-right: 0.5rem;
+  }
+  
+  .manga-details .info .authors .author-names {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 0.5rem;
+  }
+  
+  .manga-details .info .authors .author-names span {
+    margin-right: 0.5rem;
+    font-family: 'Kosugi Maru', sans-serif;
+    font-size: 1em;
+  }
+  
+  .manga-details .info .authors .author-names span:last-child {
+    margin-right: 0;
   }
   
   .manga-details .info {
+    font-family: 'Kosugi Maru', sans-serif;
+    font-size: 1em;
+  }
+  
+  .manga-details .info p span {
+    font-family: 'Bangers', cursive;
+    font-size: 1.2em;
+  }
+  
+  .favorite-button {
+    margin-top: -20px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #2edf3a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .favorite-button:hover {
+    background-color: #1f8d2d;
+  }
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
   
-  @media(min-width: 768px) {
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  .modal-content img {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .modal-close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+  }
+  
+@media(min-width: 768px) {
     .manga-details {
       flex-direction: row;
     }
@@ -56,4 +154,3 @@
     width: 100%;
     margin-bottom: 10px;
   }
-  

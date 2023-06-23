@@ -58,7 +58,6 @@
         grid-template-columns: repeat(2, 1fr);
         row-gap: 20px;
     }
-  
     .manga-card img, .manga-card h3 {
       max-width: 150px;
     }

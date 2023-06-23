@@ -13,7 +13,8 @@ const MangaDetails = () => {
     const fetchManga = async () => {
       try {
         const response = await axios.get(
-          `https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/mangas/id/${id}`
+          // `https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/mangas/id/${id}`
+          `http://localhost:3000/mangas/id/${id}`
         );
         setManga(response.data);
       } catch (error) {
@@ -27,8 +28,8 @@ const MangaDetails = () => {
   const addMangaToFavorite = async () => {
     try {
       const response = await axios.post(
-
-        `https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/favorites/add/manga/${id}`
+        // `https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/favorites/add/manga/${id}`
+        `http://localhost:3000/favorites/add/manga/${id}`
       );
       if (response.data.isAlreadyFavorite) {
         toast.error("Manga is already added to favorites!", {
@@ -50,12 +51,14 @@ const MangaDetails = () => {
 
   return (
     <div className="manga-details">
-      <img
-        src={manga.picture_url}
-        alt={manga.title}
-        onClick={() => setShowModal(true)}
-      />
-
+      <div className="image-container">
+        <img
+          src={manga.picture_url}
+          alt={manga.title}
+          onClick={() => setShowModal(true)}
+        />
+        <p className="click-instruction">Click image to view a preview</p>
+      </div>
       {showModal && (
         <div className="modal">
           <button className="modal-close" onClick={() => setShowModal(false)}>
@@ -63,7 +66,10 @@ const MangaDetails = () => {
           </button>
           <div className="modal-content">
             {manga.firstTenPages.map((url, index) => (
-              <img key={index} src={url} alt={`page ${index + 1}`} />
+              <div key={index} className="page">
+                <img src={url} alt={`page ${index + 1}`} />
+                <p> {index + 1}</p>
+              </div>
             ))}
           </div>
         </div>
@@ -84,7 +90,7 @@ const MangaDetails = () => {
             ))}
           </p>
         </div>
-        <p>
+        <p className="published">
           <span>Published:</span> {manga.aired_on}
         </p>
         <p>

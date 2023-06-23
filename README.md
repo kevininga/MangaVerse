@@ -75,6 +75,34 @@ To run the project locally, follow these steps:
 
 Please ensure that the backend server is running and accessible before starting the frontend server.
 
+## Contributors
+
+This project has been developed by the following contributors:
+
+Lst68868 (Leo) - Technical Lead
+
+- Created the public frontend and backend repositories.
+- Deployed the frontend and backend to Netlify and Heroku.
+- Conducted code reviews and managed git pulls, merges, and conflicts.
+- Made significant contributions to backend and frontend authentication.
+
+AleksBulajic - Project Manager
+
+- Managed group scheduling and delegated responsibilities.
+- Conducted and scheduled standup meetings.
+- Made significant contributions to backend and frontend authentication.
+
+kevininga - Backend and Database Specialist
+
+- Implemented backend routes and MongoDB integration.
+- Collaborated on backend architecture and best practices.
+
+alibay97 (Alison) - Lead Designer and Frontend Developer
+
+- Led frontend design efforts.
+- Made significant contributions to frontend development and CSS styling.
+- Collaborated on frontend architecture and best practices.
+
 ## Contributing
 
 Contributions to the project are welcome! If you would like to contribute, please follow these steps:

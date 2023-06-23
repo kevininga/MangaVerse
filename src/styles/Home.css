@@ -25,12 +25,20 @@
     height: auto;
 }
 
+.manga-card img:hover {
+    transform: scale(0.98);
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px 1px #8CC63F;
+   }
+
 .manga-card h3 {
     max-width: 300px;
     word-wrap: break-word;
     text-align: center;
     height: 40px;
     margin-top: 10px;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black;
 }
 
 /* Responsive styles for smaller screens */

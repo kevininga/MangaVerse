@@ -19,8 +19,8 @@ const Home = () => {
     if (isLoggedIn) {
       const fetchMangas = async () => {
         const response = await axios.get(
-          // "https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/mangas/all",
-          "http://localhost:3000/mangas/all",
+          "https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/mangas/all",
+         
           {
             headers: {
               Authorization: LOCALSTORAGE_KEY,

@@ -3,7 +3,7 @@ import axios from "axios";
 export const LOCALSTORAGE_KEY = "token";
 
 // Create a re-useable axios object, with our API as the baseURL
-const baseURL = "http://localhost:3000/"
+const baseURL = "https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/"
  const base = axios.create({
   baseURL
  }

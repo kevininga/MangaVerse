@@ -42,6 +42,7 @@ const Favorites = () => {
   return (
     <div className="favorites-grid">
       {favorites.map((favorite) => (
+        favorite.manga &&
         <div key={favorite._id} className="favorite-item">
           <Link to={`/mangas/id/${favorite.manga._id}`}>
             <img src={favorite.manga.picture_url} alt={favorite.manga.title} />

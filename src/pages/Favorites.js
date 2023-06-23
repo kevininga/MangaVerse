@@ -3,6 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import "../styles/Favorites.css";
+import gif from "../assets/gif/ZK.gif";
 
 const Favorites = () => {
   const [favorites, setFavorites] = useState([]);
@@ -30,11 +31,13 @@ const Favorites = () => {
       toast.error("Failed to remove manga from favorites");
     }
   };
-
+  
   if (!favorites.length) {
-    return <div className="intro-text">No favorites yet!</div>;
+    return <div className="intro-text">No favorites yet!
+    <img src={gif} alt="loading..." />
+    </div>
   }
-
+  
   return (
     <div className="favorites-grid">
       {favorites.map((favorite) => (

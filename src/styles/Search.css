@@ -5,6 +5,7 @@
   gap: 20px;
   justify-items: center;
   align-items: center;
+  margin-top: 10%;
 }
 
 .search-results img {
@@ -12,3 +13,43 @@
   max-width: 200px;  /* adjust this value to change the image size */
   height: auto;  /* keep the aspect ratio of the image */
 }
+
+  input {
+  
+    border-radius: 5px;
+    border: 0;
+    background-color: white;
+   
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+
+    width: 276px;
+   }
+
+   button {
+    padding: 4px 4px;
+    border-radius: 10px;
+    border: 0;
+    background-color: white;
+    box-shadow: #8CC63F;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+   }
+   
+   button:hover {
+    letter-spacing: 3px;
+    background-color:#8CC63F;
+    color: hsl(0, 0%, 100%);
+    box-shadow: #8CC63F;
+   }
+   
+   button:active {
+    letter-spacing: 3px;
+    background-color: #8CC63F;
+    color: hsl(0, 0%, 100%);
+    box-shadow: #8CC63F;
+    transform: translateY(10px);
+    transition: 100ms;
+   } 

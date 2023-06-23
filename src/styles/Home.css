@@ -18,12 +18,23 @@
     height: 450px;
     font-family: 'Bangers', cursive;
 }
+/* .manga-card :hover {
+    transform: scale(0.98);
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px 1px #8CC63F;
+   } */
   
 .manga-card img {
     width: 100%;
     max-width: 300px;
     height: auto;
 }
+ƒ
+.manga-card img:hover {
+    transform: scale(0.98);
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px 1px #8CC63F;
+   }
 
 .manga-card h3 {
     max-width: 300px;
@@ -31,7 +42,16 @@
     text-align: center;
     height: 40px;
     margin-top: 10px;
+   -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
+  text-shadow: #8CC63F;
 }
+
+/* .manga-card h3:hover {
+    transform: scale(0.98);
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px 1px #8CC63F;
+   }  */
 
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {

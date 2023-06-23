@@ -1,36 +1,42 @@
-import React from "react";
-import { useContext } from "react";
-import { AuthContext } from "../auth/AuthContextComponent";
-import { Routes, Route } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import Navbar from "../components/Navbar";
-import Home from "../pages/Home";
 import Signin from "../pages/Signin";
 import Signup from "../pages/Signup";
-import Signout from "../components/Signout";
-import Favorites from "../pages/Favorites";
+import Home from "../pages/Home";
 import Search from "../components/Search";
+import Favorites from "../pages/Favorites";
 import MangaDetails from "../pages/MangaDetails";
+import Signout from "./Signout";
 import "react-toastify/dist/ReactToastify.css";
+import { AuthContext } from "../auth/AuthContextComponent";
 
 function App() {
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
 
+  // Redirect to the home page if already logged in
+  useEffect(() => {
+    const logged = localStorage.getItem("isloggedin");
+    setIsLoggedIn(logged);
+  }, [setIsLoggedIn]);
+
   return (
     <>
-      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+      {isLoggedIn && <Navbar />}
       <Routes>
-        <Route path="/signin" element={<Signin />} />
+        <Route path="/" element={<Signin setIsLoggedIn={setIsLoggedIn} />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/home" element={<Home />} />
         {isLoggedIn && (
           <>
+            <Route path="/home" element={<Home />} />
             <Route path="/search" element={<Search />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/mangas/id/:id" element={<MangaDetails />} />
             <Route path="/signout" element={<Signout />} />
           </>
         )}
+        <Route path="/*" element={<Navigate to="/" replace />} />
       </Routes>
       <ToastContainer />
     </>

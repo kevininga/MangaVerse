@@ -18,7 +18,7 @@ function Navbar({ children }) {
             <Link to="/home">Home</Link>
           </li>
           <li>
-            <Link to="/signin">Signin</Link>
+            <Link to="/">Signin</Link>
           </li>
           <li>
             <Link to="/signout">Signout</Link>

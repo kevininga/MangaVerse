@@ -17,6 +17,9 @@
   .manga-details h1 {
     font-family: 'Bangers', cursive;
     font-size: 4em;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black;
+    margin-top: 10px;
   }
   
   .manga-details p {
@@ -61,11 +64,18 @@
   .manga-details .info {
     font-family: 'Kosugi Maru', sans-serif;
     font-size: 1em;
+    background: rgba(0, 0, 0, 0.5); /* black background with 60% opacity */
+    padding: 1em; 
+    border-radius: 50px;
+    margin-top: -40px;
   }
   
   .manga-details .info p span {
     font-family: 'Bangers', cursive;
     font-size: 1.2em;
+  }
+  .published{
+    margin-top: -10px;
   }
   
   .favorite-button {
@@ -113,8 +123,38 @@
     top: 20px;
     background: none;
     border: none;
-    font-size: 20px;
+    font-size: 60px;
     cursor: pointer;
     color: white;
   }
+  .modal-content .page {
+    text-align: center; 
+    color: black;
+    font-family: 'Bangers', cursive;
+  }
   
+  .modal-content .page p {
+    margin-top: 10px; 
+  }
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Kosugi Maru', sans-serif;
+    font-style: italic;
+
+  }
+  
+  @media (max-width: 768px) {
+    .manga-details {
+      flex-direction: column;
+    }
+  
+    .manga-details img {
+      margin-right: 0;
+      margin-bottom: 2em;
+    }
+    .click-instruction {
+        margin-top: -20px;
+    }
+  }

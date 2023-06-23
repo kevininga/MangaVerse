@@ -88,5 +88,8 @@
     .favorite-item img, .favorite-item h3 {
       max-width: 150px;
     }
+    .favorite-delete-button {
+    margin-top: 10px
+    }
 }
 

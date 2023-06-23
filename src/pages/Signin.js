@@ -2,15 +2,11 @@ import React, { useState, useContext } from "react";
 import axios from "axios";
 import { LOCALSTORAGE_KEY } from "../auth/baseURL";
 import { AuthContext } from "../auth/AuthContextComponent";
-
 import logo from "../assets/logo/png/logo.png"
 import "../styles/Signin.css";
 
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-
-
-
 
 function Signin() {
   const { setIsLoggedIn } = useContext(AuthContext);

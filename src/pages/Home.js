@@ -15,13 +15,12 @@ const Home = () => {
   const [mangas, setMangas] = useState([]);
 
   useEffect(() => {
-
     if (isLoggedIn) {
       const fetchMangas = async () => {
         const response = await axios.get(
           "https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/mangas/all",
           // `http://localhost:3000/mangas/all`,
-         
+
           {
             headers: {
               Authorization: LOCALSTORAGE_KEY,
@@ -32,7 +31,6 @@ const Home = () => {
         setMangas(response.data);
         console.log(response.data);
       };
-
 
       fetchMangas();
     }

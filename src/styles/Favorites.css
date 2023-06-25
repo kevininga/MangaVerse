@@ -1,4 +1,14 @@
 /* styles/Favorites.css */
+.title{
+    color: white;
+    font-family: 'Bangers', cursive;
+    font-size: 5em;
+    text-align: center;
+    margin: 0;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black;
+}
+
 .intro-text {
     display: flex;
     flex-direction: column;
@@ -18,23 +28,30 @@
     justify-items: center;
     align-items: center;
     padding: 20px;
-    font-size: 30px;
+    font-size: 24px;
 }
   
-.favorite-item {
+.favorite-item, .manga-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     color: white;
-    height: 450px;
+    min-height: 450px;
     font-family: 'Bangers', cursive;
 }
+
   
 .favorite-item img {
     width: 100%;
     max-width: 300px;
     height: auto;
+}
+
+.favorite-item img:hover {
+    transform: scale(0.98);
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px 1px #8CC63F;
 }
 
 .favorite-item h3 {
@@ -43,6 +60,8 @@
     text-align: center;
     height: 40px;
     margin-top: 10px;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black;
 }
 
 .favorite-description {
@@ -52,7 +71,7 @@
 }
 
 .favorite-delete-button {
-    margin-top: -20px;
+    margin-top: -5px;
     padding: 10px 20px;
     color: #fff;
     background-color: #f44336; /* Red color for delete action */
@@ -66,30 +85,33 @@
     background-color: #d32f2f; /* Darken color on hover */
 }
 
-
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
     .favorites-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
     }
   
     .favorite-item img, .favorite-item h3 {
-      max-width: 200px;
+        max-width: 200px;
+    }
+
+    .favorite-delete-button {
+        margin-top: 40px; /* Add more margin to push the button further down */
     }
 }
   
 @media (max-width: 480px) {
     .favorites-grid {
         grid-template-columns: repeat(2, 1fr);
-        row-gap: 20px;
+        row-gap: 0px;
     }
   
     .favorite-item img, .favorite-item h3 {
-      max-width: 150px;
+        max-width: 150px;
     }
+
     .favorite-delete-button {
-    margin-top: 10px
+        margin-top: 50px; /* Add even more margin for very small screens */
     }
 }
-

@@ -19,7 +19,9 @@ export default function AuthContextComponent({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn, name, handleLogout }}>
+    <AuthContext.Provider
+      value={{ isLoggedIn, setIsLoggedIn, name, handleLogout }}
+    >
       {children}
     </AuthContext.Provider>
   );

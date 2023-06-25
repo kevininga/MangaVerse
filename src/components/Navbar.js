@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 import Search from "../components/Search";
-import { useContext } from "react";
 import { AuthContext } from "../auth/AuthContextComponent";
 
 function Navbar({ children }) {
   const { handleLogout } = useContext(AuthContext);
+  const [manga, setManga] = useState([]);
+  const [showResults, setShowResults] = useState(false);
 
   const handleClickSignout = () => {
     handleLogout();
@@ -17,24 +18,39 @@ function Navbar({ children }) {
     <div>
       <nav>
         <ul className="navbar-list">
-          <li>
-            <Search />
+          <li className="search-bar">
+            <Search
+              setShowResults={setShowResults}
+              manga={manga}
+              setManga={setManga}
+              showResults={showResults}
+            />
           </li>
-          <li>
-            <Link to="/signup">Signup</Link>
-          </li>
-          <li>
-            <Link to="/home">Home</Link>
-          </li>
-          <li>
-            <Link to="/">Signin</Link>
-          </li>
-          <li>
-            <Link to="/favorites">Favorites</Link>
-          </li>
-          <li>
-            <button onClick={handleClickSignout}>Signout</button>
-          </li>
+          <div className="menu-items">
+            <li>
+              <Link to="/signup" onClick={() => setShowResults(false)}>
+                Signup
+              </Link>
+            </li>
+            <li>
+              <Link to="/home" onClick={() => setShowResults(false)}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/" onClick={() => setShowResults(false)}>
+                Signin
+              </Link>
+            </li>
+            <li>
+              <Link to="/favorites" onClick={() => setShowResults(false)}>
+                Favorites
+              </Link>
+            </li>
+            <li>
+              <button onClick={handleClickSignout}>Signout</button>
+            </li>
+          </div>
         </ul>
       </nav>
       {children}

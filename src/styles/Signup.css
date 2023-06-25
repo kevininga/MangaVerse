@@ -1,30 +1,39 @@
 /* Styles for Signup component */
-.signup-container {
+.sign-up {
     text-align: center;
     margin-top: 50px;
-  }
-  
-  .signup-container h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-  
-  .signup-container form {
+}
+
+.sign-up img {
+    width: auto;
+    height: auto;
+    margin-bottom: 10px;
+    margin-top: -20px;
+}
+
+.sign-up form {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
-  }
-  
-  .signup-container input {
+}
+
+.sign-up label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.sign-up label input {
     width: 300px;
     height: 40px;
-    margin-bottom: 10px;
+    margin-top: 0px;
     padding: 5px;
     font-size: 1em;
-  }
-  
-  .signup-container button {
+    color: #fff;
+}
+
+.sign-up button {
     width: 200px;
     height: 40px;
     background-color: #2edf3a;
@@ -34,22 +43,17 @@
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .signup-container button:hover {
+}
+
+.sign-up button:hover {
     background-color: #1f8d2d;
-  }
-  
-  .signup-container span {
-    font-size: 0.9em;
-  }
-  
-  .signup-container a {
-    color: #2edf3a;
+}
+
+.redirect a {
+    color: white;
     text-decoration: none;
-  }
-  
-  .signup-container a:hover {
-    text-decoration: underline;
-  }
-  
+}
+
+.redirect a:hover {
+  text-decoration: underline;
+}

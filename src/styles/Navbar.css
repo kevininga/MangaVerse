@@ -1,37 +1,71 @@
+/* styles/Navbar.css */
+
 .navbar-list {
   list-style-type: none;
-  margin: 50;
+  margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #121212;
   opacity: 92%;
-  text-align: end;
-
-
+  display: flex;
+  justify-content: space-between;
 }
 
 .navbar-list li {
-display: inline-block;
-
+  display: inline-block;
 }
 
 .navbar-list li a {
   display: block;
-  color:  #ffffff;
+  color: #ffffff;
   text-align: center;
   padding: 14px 36px;
   text-decoration: none;
 }
 
 .navbar-list li a:hover {
-  background-color: #8CC63F
+  background-color: #8CC63F;
 }
 
 .navbar-list li input[type="text"] {
-  margin: 10px;
-  padding: 5px;
+  margin: 0px;
+  padding: 13px;
+}
+
+.navbar-list .menu-items {
+  display: flex;
+}
+
+.navbar-list .menu-items li {
+  margin-left: 15px;
 }
 
 .navbar-list a.docs.creator {
-  letter-spacing: normal ;
+  letter-spacing: normal;
+}
+
+/* Responsive rules for smaller screens */
+
+@media screen and (max-width: 768px) {
+  .navbar-list {
+    flex-direction: column;
+  }
+
+  .navbar-list li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-list li a {
+    padding: 14px 0;
+  }
+
+  .navbar-list .menu-items {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .navbar-list .menu-items li {
+    margin-left: 0;
+  }
 }

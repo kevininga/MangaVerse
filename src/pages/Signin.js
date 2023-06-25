@@ -88,9 +88,9 @@ function Signin() {
         <br />
         <button type="submit">Sign In</button>
       </form>
-      <span>
+      <span className="goTo">
         {"Dont have an Account?"}
-        <Link to="/signup">Go to Signup</Link>
+        <Link className= "link" to="/signup">Go to Signup</Link>
         {" instead."}
       </span>
     </div>

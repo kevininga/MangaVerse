@@ -67,9 +67,9 @@ export default function Signup() {
         />
         <button>Signup</button>
       </form>
-      <span>
+      <span className="goTo">
         {"Already have an account "}
-        <Link to="/signin">Go to Signin</Link>
+        <Link className= "link" to="/signin">Go to Signin</Link>
         {" instead."}
       </span>
     </div>

@@ -19,15 +19,9 @@ function Navbar({ children }) {
         <ul className="navbar-list">
           <li>
             <Search />
-          </li>
-          <li>
-            <Link to="/signup">Signup</Link>
-          </li>
-          <li>
+            </li>
+            <li>
             <Link to="/home">Home</Link>
-          </li>
-          <li>
-            <Link to="/">Signin</Link>
           </li>
           <li>
             <Link to="/favorites">Favorites</Link>

@@ -53,3 +53,13 @@
     text-decoration: underline;
   }
   
+  .goTo {
+    color: white; /* Set the font color */
+    font-size: 16px; /* Increase the font size */
+    background-color: black; /* Add a background color */
+    padding: 5px; /* Add padding for better visibility */
+    
+  }
+  .link{
+    color: blue;
+  }

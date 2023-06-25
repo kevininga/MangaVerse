@@ -22,6 +22,7 @@ input {
   transition: all 0.5s ease;
   width: 276px;
   border: 2px solid rgb(140, 198, 63);
+  color: white ;
 }
 
 button {

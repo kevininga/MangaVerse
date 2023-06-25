@@ -18,6 +18,17 @@ function Navbar({ children }) {
     <div>
       <nav>
         <ul className="navbar-list">
+          <li>
+            <Search />
+            </li>
+            <li>
+            <Link to="/home">Home</Link>
+          </li>
+          <li>
+            <Link to="/favorites">Favorites</Link>
+          </li>
+          <li>
+            <button onClick={handleClickSignout}>Signout</button>
           <li className="search-bar">
             <Search
               setShowResults={setShowResults}
@@ -26,31 +37,6 @@ function Navbar({ children }) {
               showResults={showResults}
             />
           </li>
-          <div className="menu-items">
-            <li>
-              <Link to="/signup" onClick={() => setShowResults(false)}>
-                Signup
-              </Link>
-            </li>
-            <li>
-              <Link to="/home" onClick={() => setShowResults(false)}>
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/" onClick={() => setShowResults(false)}>
-                Signin
-              </Link>
-            </li>
-            <li>
-              <Link to="/favorites" onClick={() => setShowResults(false)}>
-                Favorites
-              </Link>
-            </li>
-            <li>
-              <button onClick={handleClickSignout}>Signout</button>
-            </li>
-          </div>
         </ul>
       </nav>
       {children}

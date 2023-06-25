@@ -49,6 +49,16 @@
   .sign-in button:hover {
     background-color: #1f8d2d;
   }
+
+  .goTo {
+    color: white; /* Set the font color */
+    font-size: 16px; /* Increase the font size */
+    background-color: black; /* Add a background color */
+    padding: 5px; /* Add padding for better visibility */   
+  }
+  .link{
+    color: blue;
+  }
   .redirect{
     color: white;
     text-decoration: none;

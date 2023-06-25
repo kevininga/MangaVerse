@@ -81,9 +81,9 @@ export default function Signup() {
         <br />
         <button type="submit">Sign Up</button>
       </form>
-      <span className="redirect">
-        {"Already have an Account? "}
-        <Link to="/signin">Sign in</Link>
+      <span className="goTo">
+        {"Already have an account "}
+        <Link className= "link" to="/signin">Go to Signin</Link>
         {" instead."}
       </span>
     </div>

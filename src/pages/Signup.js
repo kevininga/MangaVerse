@@ -6,7 +6,6 @@ import "../styles/Signup.css";
 
 import { useNavigate } from "react-router-dom";
 
-
 export default function Signup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -32,8 +31,8 @@ export default function Signup() {
         setEmail("");
         setPassword("");
         setVerifyPassword("");
-        console.log("Success")
-        navigate("/signin");;
+        console.log("Success");
+        navigate("/signin");
       } else {
         console.log("Error:", response.status);
       }

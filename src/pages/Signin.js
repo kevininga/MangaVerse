@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import axios from "axios";
 import { LOCALSTORAGE_KEY } from "../auth/baseURL";
 import { AuthContext } from "../auth/AuthContextComponent";
-import logo from "../assets/logo/png/logo.png"
+import logo from "../assets/logo/png/logo.png";
 import "../styles/Signin.css";
 
 import { useNavigate } from "react-router-dom";
@@ -66,10 +66,15 @@ function Signin() {
 
   return (
     <div className="sign-in">
-         <img src={logo} alt="logo" />
+      <img src={logo} alt="logo" />
       <form onSubmit={handleSubmit}>
         <label>
-          <input type="text" placeholder="username..." value={name} onChange={handleUsernameChange} />
+          <input
+            type="text"
+            placeholder="username..."
+            value={name}
+            onChange={handleUsernameChange}
+          />
         </label>
         <br />
         <label>

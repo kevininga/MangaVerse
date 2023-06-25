@@ -30,16 +30,18 @@ const MangaDetails = () => {
   const addMangaToFavorite = async () => {
     try {
       const response = await axios.post(
-        `https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/favorites/add/manga/${id}`
-        // `http://localhost:3000/favorites/add/manga/${id}`
+        // `https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/favorites/add/manga/${id}`
+        `http://localhost:3000/favorites/add/manga/${id}`
       );
       if (response.data.isAlreadyFavorite) {
         toast.error("Manga is already added to favorites!", {
           toastId: "alreadyFavorite",
+          autoClose: 1500,
         });
       } else {
         toast.success("Manga added to favorites!", {
           toastId: "addedFavorite",
+          autoClose: 1500,
         });
       }
     } catch (error) {

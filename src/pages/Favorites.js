@@ -52,6 +52,7 @@ const Favorites = () => {
 
   return (
     <div>
+      <div className="title">Favorites</div>
       <div className="favorites-grid">
         {favorites.map(
           (favorite) =>

@@ -1,10 +1,10 @@
-const Manga = ({ manga }) => {
-  return (
-    <div>
-      <img src={manga.picture_url} alt={manga.title} />
-      {/* Remove the title display */}
-    </div>
-  );
-};
+// const Manga = ({ manga }) => {
+//   return (
+//     <div>
+//       <img src={manga.picture_url} alt={manga.title} />
+//       {/* Remove the title display */}
+//     </div>
+//   );
+// };
 
-export default Manga;
+// export default Manga;

@@ -7,7 +7,8 @@
   .sign-in img {
     width: auto;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: -20px;
   }
   
   
@@ -27,7 +28,7 @@
   .sign-in label input {
     width: 300px;
     height: 40px;
-    margin-top: 5px;
+    margin-top: 0px;
     padding: 5px;
     font-size: 1em;
     color: #fff;
@@ -53,9 +54,13 @@
     color: white; /* Set the font color */
     font-size: 16px; /* Increase the font size */
     background-color: black; /* Add a background color */
-    padding: 5px; /* Add padding for better visibility */
-    
+    padding: 5px; /* Add padding for better visibility */   
   }
   .link{
     color: blue;
+  }
+  .redirect{
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
   }

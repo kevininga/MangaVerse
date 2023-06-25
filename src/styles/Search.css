@@ -1,15 +1,26 @@
 /* styles/Search.css */
+
 .search-results {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 10px;
   justify-items: left;
   align-items: left;
-  margin-top: 10%;
+  margin-top: 20px;
+  font-family: 'Bangers', cursive;
+}
+
+.search-results a {
+  display: inline-block;
+  margin: 10px;
+}
+
+.search-results a:hover {
+  border: 2px solid #8cc63f;
 }
 
 .search-results img {
-  width: 100%;
+  width:50%;
   max-width: 200px; /* adjust this value to change the image size */
   height: auto; /* keep the aspect ratio of the image */
 }
@@ -20,14 +31,13 @@ input {
   opacity: 80%;
   letter-spacing: 0.5px;
   transition: all 0.5s ease;
-  width: 276px;
+  width: 300px;
   border: 2px solid rgb(140, 198, 63);
-  color: white ;
+  color: white;
 }
 
 button {
-  padding: 4px 4px;
-  border-radius: 10px;
+  padding: 2px 4px;
   border: 0;
   background-color: white;
   box-shadow: #8cc63f;
@@ -50,4 +60,22 @@ button:active {
   box-shadow: #8cc63f;
   transform: translateY(10px);
   transition: 100ms;
+}
+
+/* Responsive rules for smaller screens */
+
+@media screen and (max-width: 768px) {
+  .search-results {
+    grid-template-columns: repeat(3, 1fr); /* reduce the number of columns to 2 */
+  }
+
+  input {
+    width: 100%; /* make the input full width */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .search-results {
+    grid-template-columns: repeat(3, 1fr); /* reduce the number of columns to 1 */
+  }
 }

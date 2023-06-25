@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 import Search from "../components/Search";
-import { useContext } from "react";
 import { AuthContext } from "../auth/AuthContextComponent";
 
 function Navbar({ children }) {
   const { handleLogout } = useContext(AuthContext);
+  const [manga, setManga] = useState([]);
+  const [showResults, setShowResults] = useState(false);
 
   const handleClickSignout = () => {
     handleLogout();
@@ -28,6 +29,13 @@ function Navbar({ children }) {
           </li>
           <li>
             <button onClick={handleClickSignout}>Signout</button>
+          <li className="search-bar">
+            <Search
+              setShowResults={setShowResults}
+              manga={manga}
+              setManga={setManga}
+              showResults={showResults}
+            />
           </li>
         </ul>
       </nav>

@@ -29,6 +29,7 @@ function Navbar({ children }) {
           </li>
           <li>
             <button onClick={handleClickSignout}>Signout</button>
+            </li>
           <li className="search-bar">
             <Search
               setShowResults={setShowResults}

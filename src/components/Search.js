@@ -7,6 +7,7 @@ import { AuthContext } from "../auth/AuthContextComponent";
 const Search = ({ setManga, manga, setShowResults, showResults }) => {
   const [search, setSearch] = useState("");
   const { isLoggedIn } = useContext(AuthContext);
+  
 
   const handleSearch = async () => {
     let lowercaseSearch = search.toLowerCase();
@@ -44,6 +45,7 @@ const Search = ({ setManga, manga, setShowResults, showResults }) => {
     } else {
       setManga([]);
       setShowResults(false);
+    
     }
   }, [search]);
 

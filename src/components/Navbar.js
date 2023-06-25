@@ -18,9 +18,14 @@ function Navbar({ children }) {
     <div>
       <nav>
         <ul className="navbar-list">
-          <li>
-            <Search />
-            </li>
+           <li className="search-bar">
+            <Search
+              setShowResults={setShowResults}
+              manga={manga}
+              setManga={setManga}
+              showResults={showResults}
+            />
+          </li>
             <li>
             <Link to="/home">Home</Link>
           </li>
@@ -30,14 +35,6 @@ function Navbar({ children }) {
           <li>
             <button onClick={handleClickSignout}>Signout</button>
             </li>
-          <li className="search-bar">
-            <Search
-              setShowResults={setShowResults}
-              manga={manga}
-              setManga={setManga}
-              showResults={showResults}
-            />
-          </li>
         </ul>
       </nav>
       {children}

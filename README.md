@@ -119,4 +119,4 @@ Please make sure to follow the code style guide and maintain consistency with th
 
 For any inquiries or further information, please feel free to reach out to any of the contributors mentioned above.
 
-We hope you enjoy using the Manga Browsing Web App!
+We hope you enjoyed your journey into the MangaVerse!

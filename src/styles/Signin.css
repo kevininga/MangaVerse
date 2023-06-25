@@ -7,7 +7,8 @@
   .sign-in img {
     width: auto;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: -20px;
   }
   
   
@@ -27,7 +28,7 @@
   .sign-in label input {
     width: 300px;
     height: 40px;
-    margin-top: 5px;
+    margin-top: 0px;
     padding: 5px;
     font-size: 1em;
     color: #fff;
@@ -47,4 +48,9 @@
   
   .sign-in button:hover {
     background-color: #1f8d2d;
+  }
+  .redirect{
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
   }

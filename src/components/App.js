@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react"; // <-- Added useState
 import { Routes, Route, Navigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import Navbar from "../components/Navbar";
@@ -8,20 +8,18 @@ import Home from "../pages/Home";
 import Search from "../components/Search";
 import Favorites from "../pages/Favorites";
 import MangaDetails from "../pages/MangaDetails";
-// import Signout from "./Signout";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../auth/AuthContextComponent";
 
 function App() {
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+  const [showResults, setShowResults] = useState(false); // <-- Added state here
 
-  // Redirect to the home page if already logged in
   useEffect(() => {
     const logged = localStorage.getItem("isloggedin");
     setIsLoggedIn(logged);
 
     const handleBeforeUnload = () => {
-      // Perform sign out logic here
       setIsLoggedIn(false);
       localStorage.clear();
     };
@@ -35,17 +33,30 @@ function App() {
 
   return (
     <>
-      {isLoggedIn && <Navbar />}
+      {isLoggedIn && <Navbar setShowResults={setShowResults} />}{" "}
+      {/* <-- Passed setShowResults here */}
       <Routes>
         <Route path="/" element={<Signin setIsLoggedIn={setIsLoggedIn} />} />
         <Route path="/signup" element={<Signup />} />
         {isLoggedIn && (
           <>
-            <Route path="/home" element={<Home />} />
-            <Route path="/search" element={<Search />} />
+            <Route
+              path="/home"
+              element={<Home setShowResults={setShowResults} />}
+            />{" "}
+            {/* <-- And here */}
+            <Route
+              path="/search"
+              element={
+                <Search
+                  showResults={showResults}
+                  setShowResults={setShowResults}
+                />
+              }
+            />{" "}
+            {/* <-- And here */}
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/mangas/id/:id" element={<MangaDetails />} />
-            {/* <Route path="/signout" element={<Signout />} /> */}
           </>
         )}
         <Route path="/*" element={<Navigate to="/" replace />} />

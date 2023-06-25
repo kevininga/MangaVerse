@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
+import logo from "../assets/logo/png/logo.png";
 import "../styles/Signup.css";
-
 import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
@@ -18,7 +17,6 @@ export default function Signup() {
     try {
       const response = await axios.post(
         "https://project-3-manga-backend-2d7dcb1090ee.herokuapp.com/users/signup",
-        // "http://localhost:3000/users/signup",
         {
           name,
           email,
@@ -42,34 +40,50 @@ export default function Signup() {
   };
 
   return (
-    <div>
-      <h1>Sign Up</h1>
+    <div className="sign-up">
+      <img src={logo} alt="logo" />
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-        />
-        <input
-          type="email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-        />
-        <input
-          type="password"
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
-        />
-        <input
-          type="password"
-          value={verifyPassword}
-          onChange={(event) => setVerifyPassword(event.target.value)}
-        />
-        <button>Signup</button>
+        <label>
+          <input
+            type="text"
+            placeholder="username..."
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+          />
+        </label>
+        <br />
+        <label>
+          <input
+            type="email"
+            placeholder="email..."
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
+        </label>
+        <br />
+        <label>
+          <input
+            type="password"
+            placeholder="password..."
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+          />
+        </label>
+        <br />
+        <label>
+          <input
+            type="password"
+            placeholder="verify password..."
+            value={verifyPassword}
+            onChange={(event) => setVerifyPassword(event.target.value)}
+          />
+        </label>
+        <br />
+        <button type="submit">Sign Up</button>
       </form>
-      <span>
-        {"Already have an account "}
-        <Link to="/signin">Go to Signin</Link>
+      <span className="redirect">
+        {"Already have an Account? "}
+        <Link to="/signin">Sign in</Link>
         {" instead."}
       </span>
     </div>

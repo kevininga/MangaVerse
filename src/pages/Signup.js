@@ -4,6 +4,7 @@ import axios from "axios";
 import logo from "../assets/logo/png/logo.png";
 import "../styles/Signup.css";
 import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 
 export default function Signup() {
   const [name, setName] = useState("");
@@ -29,12 +30,15 @@ export default function Signup() {
         setEmail("");
         setPassword("");
         setVerifyPassword("");
+        toast.success("Successfully signed up!", { autoClose: 1500 });
         console.log("Success");
         navigate("/signin");
       } else {
+        toast.error("An error occurred", { autoClose: 1500 });
         console.log("Error:", response.status);
       }
     } catch (error) {
+      toast.error("An error occurred", { autoClose: 1500 });
       console.log(error);
     }
   };
@@ -88,6 +92,7 @@ export default function Signup() {
         </Link>
         {" to sign in instead."}
       </span>
+      <ToastContainer />
     </div>
   );
 }

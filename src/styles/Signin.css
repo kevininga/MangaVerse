@@ -1,66 +1,70 @@
 /* Styles for Signin component */
 .sign-in {
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  .sign-in img {
-    width: auto;
-    height: auto;
-    margin-bottom: 10px;
-    margin-top: -20px;
-  }
-  
-  
-  .sign-in form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .sign-in label {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-  }
-  
-  .sign-in label input {
-    width: 300px;
-    height: 40px;
-    margin-top: 0px;
-    padding: 5px;
-    font-size: 1em;
-    color: #fff;
-  }
-  
-  .sign-in button {
-    width: 200px;
-    height: 40px;
-    background-color: #2edf3a;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .sign-in button:hover {
-    background-color: #1f8d2d;
-  }
+  text-align: center;
+  margin-top: 50px;
+}
 
-  .goTo {
-    color: white; /* Set the font color */
-    font-size: 16px; /* Increase the font size */
-    background-color: black; /* Add a background color */
-    padding: 5px; /* Add padding for better visibility */   
-  }
-  .link{
-    color: blue;
-  }
-  .redirect{
-    color: white;
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+.sign-in img {
+  width: auto;
+  height: auto;
+  margin-bottom: 10px;
+  margin-top: -20px;
+}
+
+
+.sign-in form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sign-in label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.sign-in label input {
+  width: 300px;
+  height: 40px;
+  margin-top: 0px;
+  padding: 5px;
+  font-size: 1em;
+  color: #fff;
+}
+
+.sign-in button {
+  width: 200px;
+  height: 40px;
+  background-color: #2edf3a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sign-in button:hover {
+  background-color: #1f8d2d;
+}
+
+.goTo {
+  color: white; /* Set the font color */
+  padding: 5px;
+  border-radius: 5px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+.link{
+  color: white;
+  text-decoration: none;
+
+}
+.redirect{
+  color: white;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+

@@ -82,9 +82,11 @@ export default function Signup() {
         <button type="submit">Sign Up</button>
       </form>
       <span className="goTo">
-        {"Already have an account "}
-        <Link className= "link" to="/signin">Go to Signin</Link>
-        {" instead."}
+        {"Already have an account? Click "}
+        <Link className="link" to="/signin">
+          here
+        </Link>
+        {" to sign in instead."}
       </span>
     </div>
   );

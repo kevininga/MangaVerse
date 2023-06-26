@@ -1,5 +1,8 @@
 /* styles/Navbar.css */
 
+/* Import Google Font - Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 .navbar-list {
   list-style-type: none;
   margin: 0;
@@ -9,10 +12,12 @@
   opacity: 92%;
   display: flex;
   justify-content: space-between;
+  align-items: stretch; /* align items vertically */
 }
 
 .navbar-list li {
-  display: inline-block;
+  display: flex;
+  align-items: center; /* center the content of each li vertically */
 }
 
 .navbar-list li a {
@@ -21,6 +26,8 @@
   text-align: center;
   padding: 14px 36px;
   text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
 }
 
 .navbar-list li a:hover {
@@ -44,20 +51,42 @@
   letter-spacing: normal;
 }
 
-/* Responsive rules for smaller screens */
+/* Add a style for the sign out button */
+.navbar-list li button {
+  display: block;
+  background-color: #8CC63F; /* give it a distinct color */
+  color: #ffffff; /* white text */
+  text-align: center;
+  padding: 10px 20px; /* smaller padding */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
+.navbar-list li button:hover {
+  background-color: #6ea32c; /* slightly darker green on hover */
+}
+
+/* Responsive rules for smaller screens */
 @media screen and (max-width: 768px) {
+  .search-bar{
+    margin-left: -25px;
+  }
   .navbar-list {
     flex-direction: column;
+    align-items: center;
   }
-
   .navbar-list li {
     width: 100%;
     text-align: center;
+    justify-content: center; 
+    /* center the content horizontally */
   }
 
   .navbar-list li a {
-    padding: 14px 0;
+    padding: 9px 22.5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 
   .navbar-list .menu-items {

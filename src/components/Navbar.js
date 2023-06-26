@@ -26,17 +26,13 @@ function Navbar({ children }) {
               showResults={showResults}
             />
           </li>
-          <li>
+          <li className="menu-items">
             <Link to="/home" onClick={() => setShowResults(false)}>
               Home
             </Link>
-          </li>
-          <li>
             <Link to="/favorites" onClick={() => setShowResults(false)}>
               Favorites
             </Link>
-          </li>
-          <li>
             <button onClick={handleClickSignout}>Signout</button>
           </li>
         </ul>

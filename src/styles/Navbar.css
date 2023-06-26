@@ -41,10 +41,9 @@
 
 .navbar-list .menu-items {
   display: flex;
-}
-
-.navbar-list .menu-items li {
-  margin-left: 15px;
+  justify-content: flex-end;
+  gap: 5px; 
+  margin-right: 5px; /* adjust this value as needed */
 }
 
 .navbar-list a.docs.creator {
@@ -94,9 +93,11 @@
   .navbar-list .menu-items {
     flex-direction: column;
     margin: 0;
+    margin-bottom: 10px;
   }
 
   .navbar-list .menu-items li {
     margin-left: 0;
+    
   }
 }

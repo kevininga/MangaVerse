@@ -76,6 +76,6 @@ button:active {
 
 @media screen and (max-width: 480px) {
   .search-results {
-    grid-template-columns: repeat(3, 1fr); /* reduce the number of columns to 1 */
+    grid-template-columns: repeat(2, 1fr); /* reduce the number of columns to 1 */
   }
 }

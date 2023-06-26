@@ -18,7 +18,7 @@ function Navbar({ children }) {
     <div>
       <nav>
         <ul className="navbar-list">
-           <li className="search-bar">
+          <li className="search-bar">
             <Search
               setShowResults={setShowResults}
               manga={manga}
@@ -26,19 +26,19 @@ function Navbar({ children }) {
               showResults={showResults}
             />
           </li>
-            <li>
+          <li>
             <Link to="/home" onClick={() => setShowResults(false)}>
-                Home
-              </Link>
+              Home
+            </Link>
           </li>
           <li>
-          <Link to="/favorites" onClick={() => setShowResults(false)}>
-                Favorites
-              </Link>
+            <Link to="/favorites" onClick={() => setShowResults(false)}>
+              Favorites
+            </Link>
           </li>
           <li>
             <button onClick={handleClickSignout}>Signout</button>
-            </li>
+          </li>
         </ul>
       </nav>
       {children}

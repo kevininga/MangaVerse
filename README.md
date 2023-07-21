@@ -4,7 +4,7 @@ This repository contains the frontend code for our full-stack web application, w
 
 # Deployment
 
-Our app is deployed on Netlify. You can access the live deployment at [here](https://www.manga-verse.netlify.app)
+Our app is deployed on Netlify. You can access the live deployment at [here](www.manga-verse.netlify.app)
 ## Key Features
 
 - **Manga Library**: Browse through a comprehensive list of manga.

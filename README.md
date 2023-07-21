@@ -94,6 +94,7 @@ AleksBulajic - Project Manager
 
 kevininga - Backend and Database Specialist
 
+- Made significant contributions to frontend development and CSS styling.
 - Implemented backend routes and MongoDB integration.
 - Collaborated on backend architecture and best practices.
 
